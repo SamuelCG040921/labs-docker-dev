@@ -42,3 +42,20 @@ Status: Downloaded newer image for httpd:latest
 docker.io/library/httpd:latest
 @SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 8000:80 httpd
 537b0a82a5d3e4f2ce19ddf89d07ad6f912548189bd06a7ca476273e3df49eac
+
+## Eliminación del contendor de ubuntu
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS                     PORTS                                   NAMES
+537b0a82a5d3   httpd     "httpd-foreground"       3 minutes ago    Up 3 minutes               0.0.0.0:8000->80/tcp, :::8000->80/tcp   festive_heisenberg
+c3740fce6aa6   ubuntu    "bash"                   14 minutes ago   Exited (0) 7 minutes ago                                           brave_lamarr
+8aa705a14c0c   nginx     "/docker-entrypoint.…"   16 minutes ago   Up 16 minutes              0.0.0.0:8080->80/tcp, :::8080->80/tcp   wizardly_rosalind
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker rm c3740fce6aa6
+c3740fce6aa6
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                   NAMES
+537b0a82a5d3   httpd     "httpd-foreground"       5 minutes ago    Up 4 minutes    0.0.0.0:8000->80/tcp, :::8000->80/tcp   festive_heisenberg
+8aa705a14c0c   nginx     "/docker-entrypoint.…"   18 minutes ago   Up 18 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   wizardly_rosalind
+
+## Eliminación de todos los contendores detenidos 
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker container prune -f
+Total reclaimed space: 0B
