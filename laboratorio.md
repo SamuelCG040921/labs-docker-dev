@@ -23,3 +23,22 @@ c387064957b7: Pull complete
 Digest: sha256:fea84f3a3b72c41efe7fc3b07ae209c6856b852b942c05fa88b747b74f70e711
 Status: Downloaded newer image for python:3.9
 docker.io/library/python:3.9
+
+## Ejecución iterativa de ubuntu
+root@c3740fce6aa6:/# 
+
+## Descarga y ejecución en segundo plano mapeada de servidor web de Apache
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker pull httpd
+Using default tag: latest
+latest: Pulling from library/httpd
+efc2b5ad9eec: Already exists 
+fce1785eb819: Pull complete 
+4f4fb700ef54: Pull complete 
+f214daa0692f: Pull complete 
+05383fd8b2b3: Pull complete 
+88ad12232aa1: Pull complete 
+Digest: sha256:932ac36fabe1d2103ed3edbe66224ed2afe0041b317bcdb6f5d9be63594f0030
+Status: Downloaded newer image for httpd:latest
+docker.io/library/httpd:latest
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 8000:80 httpd
+537b0a82a5d3e4f2ce19ddf89d07ad6f912548189bd06a7ca476273e3df49eac
