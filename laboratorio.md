@@ -143,3 +143,23 @@ Total reclaimed space: 0B
  => => exporting layers                                                                                                                      0.5s
  => => writing image sha256:81a5780446db5f61954a7ec6a43450d0d80ab23442f79cc2746bfa121fd32b0c                                                 0.0s
  => => naming to docker.io/library/my-nginx:latest  
+
+ ## Usar WORKDIR y copiar un archivo
+
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker build -t ubuntu-updated:latest .
+[+] Building 1.6s (8/8) FINISHED                                                                                                   docker:default
+ => [internal] load build definition from Dockerfile                                                                                         0.1s
+ => => transferring dockerfile: 86B                                                                                                          0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                             0.0s
+ => [internal] load .dockerignore                                                                                                            0.0s
+ => => transferring context: 2B                                                                                                              0.0s
+ => [1/3] FROM docker.io/library/ubuntu:latest                                                                                               0.0s
+ => [internal] load build context                                                                                                            0.1s
+ => => transferring context: 31B                                                                                                             0.0s
+ => CACHED [2/3] WORKDIR /app                                                                                                                0.0s
+ => [3/3] COPY myfile.txt .                                                                                                                  0.3s
+ => exporting to image                                                                                                                       0.8s
+ => => exporting layers                                                                                                                      0.7s
+ => => writing image sha256:731f5cbc875db64d295a4482fff0799cd1d6ee950f55459b3e0a3d49d7b74d4e                                                 0.0s
+ => => naming to docker.io/library/ubuntu-updated:latest 
+ 
