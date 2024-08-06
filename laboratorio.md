@@ -91,5 +91,24 @@ Total reclaimed space: 0B
  => => writing image sha256:cfdd831568e6488571caf751eed03fcb5c9e83700f56be57f4e7091fbb458006                                                 0.0s 
  => => naming to docker.io/library/ubuntu-updated:latest  
 
- ## 
+ ## Construcción y ejecucion de la imagén de nginx
+
+ ### Construcción
+ @SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 0.5s (6/6) FINISHED                                                                                                   docker:default
+ => [internal] load build definition from Dockerfile                                                                                         0.1s
+ => => transferring dockerfile: 137B                                                                                                         0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                             0.0s
+ => [internal] load .dockerignore                                                                                                            0.1s
+ => => transferring context: 2B                                                                                                              0.0s
+ => [1/2] FROM docker.io/library/ubuntu:latest                                                                                               0.0s
+ => CACHED [2/2] RUN apt-get update && apt-get install -y nginx                                                                              0.0s
+ => exporting to image                                                                                                                       0.1s
+ => => exporting layers                                                                                                                      0.0s
+ => => writing image sha256:cfdd831568e6488571caf751eed03fcb5c9e83700f56be57f4e7091fbb458006                                                 0.0s
+ => => naming to docker.io/library/my-nginx:latest  
+
+ ### Ejecución
+ @SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 80:80 my-nginx:latest
+558082a0e8ec6b07523be5fb34467c7a7fd5f6761fd6d175d0a55288f2d8bd06
 
