@@ -162,4 +162,22 @@ Total reclaimed space: 0B
  => => exporting layers                                                                                                                      0.7s
  => => writing image sha256:731f5cbc875db64d295a4482fff0799cd1d6ee950f55459b3e0a3d49d7b74d4e                                                 0.0s
  => => naming to docker.io/library/ubuntu-updated:latest 
- 
+
+
+## Ejecutar un script Python al iniciar el contenedor
+ @SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker build -t python:3.9 . 
+[+] Building 3.8s (8/8) FINISHED                                                                                                   docker:default
+ => [internal] load build definition from Dockerfile                                                                                         0.1s
+ => => transferring dockerfile: 110B                                                                                                         0.0s
+ => [internal] load metadata for docker.io/library/python:3.9                                                                                0.0s
+ => [internal] load .dockerignore                                                                                                            0.1s
+ => => transferring context: 2B                                                                                                              0.0s
+ => [1/3] FROM docker.io/library/python:3.9                                                                                                  0.0s
+ => [internal] load build context                                                                                                            0.1s
+ => => transferring context: 30B                                                                                                             0.0s
+ => CACHED [2/3] WORKDIR /app                                                                                                                0.0s
+ => [3/3] COPY script.py .                                                                                                                   0.3s
+ => exporting to image                                                                                                                       2.9s
+ => => exporting layers                                                                                                                      2.7s
+ => => writing image sha256:3c1b0ddfbc40196f7c0d34cc48a62758686431d33d94d1c3875dd75ade1c3baf                                                 0.0s
+ => => naming to docker.io/library/python:3.9     
