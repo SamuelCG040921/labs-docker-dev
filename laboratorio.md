@@ -112,3 +112,17 @@ Total reclaimed space: 0B
  @SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 80:80 my-nginx:latest
 558082a0e8ec6b07523be5fb34467c7a7fd5f6761fd6d175d0a55288f2d8bd06
 
+## Modificación del dockerfile para exponer el puerto 80
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 0.6s (6/6) FINISHED                                                                                                   docker:default
+ => [internal] load build definition from Dockerfile                                                                                         0.1s
+ => => transferring dockerfile: 147B                                                                                                         0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                             0.0s
+ => [internal] load .dockerignore                                                                                                            0.1s
+ => => transferring context: 2B                                                                                                              0.0s
+ => [1/2] FROM docker.io/library/ubuntu:latest                                                                                               0.0s
+ => CACHED [2/2] RUN apt-get update && apt-get install -y nginx                                                                              0.0s
+ => exporting to image                                                                                                                       0.1s
+ => => exporting layers                                                                                                                      0.0s
+ => => writing image sha256:85eb6770455fac42ade70a4eb01835823fdabe9eb010cf3a8998895845888a87                                                 0.0s
+ => => naming to docker.io/library/my-nginx:latest   
