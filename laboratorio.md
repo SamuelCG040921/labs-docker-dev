@@ -59,3 +59,23 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS       
 ## Eliminación de todos los contendores detenidos 
 @SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker container prune -f
 Total reclaimed space: 0B
+
+# Documentación del segundo laboratorio
+
+## Crear, construir un dockerfile básico y actualizar paquetes: ejercicio 1 y 2
+@SamuelCG040921 ➜ /workspaces/labs-docker-dev (main) $ docker build -t ubuntu-updated:latest .
+[+] Building 8.6s (6/6) FINISHED                                                                                                   docker:default
+ => [internal] load build definition from Dockerfile                                                                                         0.1s
+ => => transferring dockerfile: 96B                                                                                                          0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                             0.0s
+ => [internal] load .dockerignore                                                                                                            0.1s
+ => => transferring context: 2B                                                                                                              0.0s
+ => [1/2] FROM docker.io/library/ubuntu:latest                                                                                               0.1s
+ => [2/2] RUN apt-get update && apt-get upgrade -y                                                                                           7.2s
+ => exporting to image                                                                                                                       0.7s 
+ => => exporting layers                                                                                                                      0.6s 
+ => => writing image sha256:48505686bd00a6e2d63b342bb780bd7a0f8a920a3c096d5c29c2f29310b9712d                                                 0.0s 
+ => => naming to docker.io/library/ubuntu-updated:latest   
+
+ ##  
+
